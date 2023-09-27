@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "devise", "~> 4.9"
+gem 'rails_admin'
+gem "cssbundling-rails"
+gem 'sassc', '~> 2.0'
