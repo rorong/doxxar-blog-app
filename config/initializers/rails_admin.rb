@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
   config.asset_source = :importmap
+  require 'sanitize'
 
   ### Popular gems integration
 
@@ -23,7 +24,27 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-
+  config.model 'Blog' do
+    list do
+      field :title
+      field :content do
+        formatted_value do
+          sanitized_content = Sanitize.fragment(bindings[:object].content)
+          sanitized_content.html_safe
+        end
+      end
+      field :author
+      field :user_id
+    end
+  end
+  config.model 'Blog' do
+    edit do
+      field :title
+      field :content, :ck_editor
+      field :author
+      field :user_id
+    end
+  end
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

@@ -75,3 +75,5 @@ gem "devise", "~> 4.9"
 gem 'rails_admin'
 gem "cssbundling-rails"
 gem 'sassc', '~> 2.0'
+gem 'ckeditor'
+gem 'sanitize'
