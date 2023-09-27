@@ -2,4 +2,5 @@
 //= link_directory ../stylesheets 
 //= link_tree ../../javascript .js
 //= link_tree ../../../vendor/javascript .js
-  //= link rails_admin.css
+//= link rails_admin.css
+//= link application.css
