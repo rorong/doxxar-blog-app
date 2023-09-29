@@ -1,0 +1,30 @@
+ <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <div class="logo">
+      <a href="<%= root_path %>">
+        <img src="<%= image_path('dox.png') %>" alt="Your Alt Text">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <li ><a class="my-custom-style " href="<%= root_path %>">Home</a></li>
+        <%# <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li> %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .my-custom-style {
+  background: #2a3890;
+  display: inline-block;
+  height: 52px;
+  width:200px;
+  border-radius: 10px;
+  line-height: 52px;
+  margin-left: 26px;
+  text-align: center;
+}
+
+
+</style>

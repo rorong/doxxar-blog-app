@@ -4,3 +4,4 @@
 //= link_tree ../../../vendor/javascript .js
 //= link rails_admin.css
 //= link application.css
+//= link styles.css

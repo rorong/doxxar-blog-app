@@ -1,12 +1,32 @@
-<% @blogs.each do |blog|%>
-  <div class= "d-flex">
-  <div class="card mt-5" style="width: 29rem;">
-    <img class="card-img-top" src="https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg">
-    <div class="card-body">
-      <p class="card-text"><%= blog.content.html_safe%></p>
-          <a href="#" class="btn btn-primary">View</a>
-    </div>
-  </div>
-  </div>
-<%end %>
-
+<%= render "navbar" %>
+        <header class="masthead" style="background-image: url('/assets/home-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Clean Blog</h1>
+                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </header>
+            <div class="container px-4 px-lg-5">
+              <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                  <hr class="my-4" />
+                  <% @blogs.each do |blog| %>
+                    <div class="post-preview">
+                      <h2 class="blog-post-title"><%=link_to blog.title, blog_path(blog)%></h2>
+                      <p class="blog-post-meta">
+                        Posted by <%= blog.author %>
+                        on <%= blog.created_at.strftime("%B %d, %Y") %>
+                      </p>
+                    </div>
+                    <hr class="my-4" />
+                  <% end %>
+                  <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                </div>
+              </div>
+            </div>
+<%= render "footer"%>
