@@ -10797,3 +10797,29 @@ header.masthead .post-heading .meta a {
   }
 }
 
+.my-custom-style {
+  background: #2a3890;
+  display: inline-block;
+  height: 52px;
+  width: 200px;
+  border-radius: 10px;
+  line-height: 52px;
+  margin-left: 26px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+   letter-spacing: 2px; /* Adjust the letter-spacing value as needed */
+  font-family: cursive; /* Set the font-family to 'cursive' */
+}
+.my-custom-style:hover {
+  color: white;
+}
+.bigger-image {
+  width: 200px;
+  height: 150px;
+}
+.svg-inline--fa.fa-stack-2x{
+  height: 2rem;
+  width: 2.2rem;
+}
