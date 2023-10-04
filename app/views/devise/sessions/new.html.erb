@@ -6,13 +6,13 @@
           <div class="card-body p-5 text-center">
             <h3 class="mb-5">Sign in</h3>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+               <div class="form-outline mb-4">
+              <%= f.label :email, class: "form-label", for: "form3Example3" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", id: "form3Example3", class: "form-control" %>
+            </div>
               <div class="form-outline mb-4">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-              </div>
-              <div class="form-outline mb-4">
-                <%= f.label :password %><br />
-                <%= f.password_field :password, autocomplete: "current-password" %>
+                <%= f.label :password , class: "form-label", for: "form3Example3" %><br />
+                <%= f.password_field :password, autofocus: true, autocomplete: "current-password", id: "form3Example3", class: "form-control"%>
               </div>
               <div class="form-check d-flex justify-content-start mb-4">
                 <% if devise_mapping.rememberable? %>
@@ -23,7 +23,6 @@
                 <% end %>
               </div>
               <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-              <%= render "devise/shared/links" %>
             <%end%>
           </div>
         </div>
