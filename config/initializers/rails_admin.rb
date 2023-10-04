@@ -42,6 +42,7 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :content, :ck_editor
+      field :status
       field :author
       field :user_id, :enum do
         enum do

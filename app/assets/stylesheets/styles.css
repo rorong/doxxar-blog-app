@@ -10639,7 +10639,7 @@ blockquote {
   #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
-    top: -83px;
+    top: -125px;
     transition: transform 0.2s;
     border-bottom: 1px solid white;
     background-color: rgba(255, 255, 255, 0.9);
@@ -10651,7 +10651,7 @@ blockquote {
     color: #0085A1;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a {
-    color: #212529;
+    color: #fff;
   }
   #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
     color: #0085A1;
@@ -10800,7 +10800,6 @@ header.masthead .post-heading .meta a {
 .my-custom-style {
   background: #2a3890;
   display: inline-block;
-  height: 52px;
   width: 200px;
   border-radius: 10px;
   line-height: 52px;
@@ -10808,9 +10807,9 @@ header.masthead .post-heading .meta a {
   text-align: center;
   color: white;
   text-decoration: none;
-  font-size: 28px;
-   letter-spacing: 2px; /* Adjust the letter-spacing value as needed */
-  font-family: cursive; /* Set the font-family to 'cursive' */
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: cursive;
 }
 .my-custom-style:hover {
   color: white;
@@ -10822,4 +10821,31 @@ header.masthead .post-heading .meta a {
 .svg-inline--fa.fa-stack-2x{
   height: 3rem;
   width: 3rem;
+}
+
+.large-font {
+  font-size: 25px;
+}
+.content-container {
+  text-align: justify;
+  line-height: 1.5;
+}
+/* Styles for screens smaller than 768px */
+@media screen and (max-width: 767px) {
+  /* CSS rules for mobile devices */
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Styles for screens 768px or wider */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto !important;
 }
