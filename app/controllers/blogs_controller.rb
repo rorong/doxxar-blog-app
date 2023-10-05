@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
   def show
-    @blog = Blog.find(params[:id]) 
+    @blog = Blog.friendly.find(params[:id])
   end
   private 
 
