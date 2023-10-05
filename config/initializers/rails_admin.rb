@@ -25,6 +25,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
   config.included_models = ['Blog']
+
   config.model 'Blog' do
     list do
       field :title
@@ -34,12 +35,15 @@ RailsAdmin.config do |config|
           sanitized_content.html_safe
         end
       end
+      field :heading
       field :author
       field :user_id
     end
   end
+
   config.model 'Blog' do
     edit do
+      field :heading
       field :title
       field :content, :ck_editor
       field :status
@@ -51,6 +55,7 @@ RailsAdmin.config do |config|
       end
     end
   end
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
