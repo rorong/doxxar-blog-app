@@ -10798,12 +10798,10 @@ header.masthead .post-heading .meta a {
 }
 
 .my-custom-style {
-  background: #2a3890;
   display: inline-block;
-  width: 200px;
+  width: 100px;
   border-radius: 10px;
   line-height: 52px;
-  margin-left: 26px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -10811,9 +10809,7 @@ header.masthead .post-heading .meta a {
   letter-spacing: 2px;
   font-family: cursive;
 }
-.my-custom-style:hover {
-  color: white;
-}
+
 .bigger-image {
   width: 200px;
   height: 150px;
@@ -10848,4 +10844,40 @@ header.masthead .post-heading .meta a {
 img {
   max-width: 100%;
   height: auto !important;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 4px;
+}
+
+.pagination a {
+  text-decoration: none;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.pagination a:hover {
+  background-color: #333;
+  color: #fff;
+}
+.my-custom-style2 {
+background: #2a3890;
+  display: inline-block;
+  width: 200px;
+  border-radius: 10px;
+  line-height: 52px;
+  margin-left: 26px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: cursive;
 }

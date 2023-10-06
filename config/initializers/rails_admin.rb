@@ -28,15 +28,10 @@ RailsAdmin.config do |config|
 
   config.model 'Blog' do
     list do
-      field :title
-      field :content do
-        formatted_value do
-          sanitized_content = Sanitize.fragment(bindings[:object].content)
-          sanitized_content.html_safe
-        end
-      end
       field :heading
+      field :title
       field :author
+      field :is_published
       field :user_id
     end
   end
@@ -44,9 +39,14 @@ RailsAdmin.config do |config|
   config.model 'Blog' do
     edit do
       field :heading
+      field :banner_image
       field :title
       field :content, :ck_editor
-      field :status
+      field :is_published, :enum do
+        enum do
+          [['Published', true], ['Not Published', false]]
+        end
+      end
       field :author
       field :user_id, :enum do
         enum do

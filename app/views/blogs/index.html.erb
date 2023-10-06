@@ -13,17 +13,21 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div class="col-md-10 col-lg-8 col-xl-7">
-      <hr class="my-4" />
-      <% @blogs.reverse_each do |blog| %>
+      <% @blogs.each do |blog| %>
         <div class="post-preview">
           <h2 id="blog-title" class="blog-post-title" style="font-size:1.7rem;text-align: justify;" ><%= link_to blog.heading, blog_path(blog) %></h2>
-          <p class="blog-post-meta">
-            Posted by <%= blog.author %> on <%= blog.created_at.strftime("%B %d, %Y") %>
-          </p>
+            <p class="blog-post-meta">
+              Posted by <%= blog.author %> on <%= blog.created_at.strftime("%B %d, %Y") %>
+            </p>
         </div>
         <hr class="my-4" />
       <% end %>
-      <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+      <%= paginate @blogs, outer_window: 0, inner_window: 1,
+       previous_label: '<i class="fas fa-chevron-left"></i> Previous'.html_safe,
+      next_label: 'Next <i class="fas fa-chevron-right"></i>'.html_safe,
+      params: { controller: 'blogs', action: 'index' },
+      page_links: false %>
+    </div>
     </div>
   </div>
 </div>
