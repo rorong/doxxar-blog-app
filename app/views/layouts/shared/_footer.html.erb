@@ -4,26 +4,29 @@
       <div class="col-md-10 col-lg-8 col-xl-7">
         <ul class="list-inline text-center">
           <li class="list-inline-item">
-            <%= link_to "https://www.instagram.com/traveldoxxar/".html_safe do %>
-            <span class="fa-stack fa-lg">
-              <i class="fas fa-circle fa-stack-2x"></i>
-              <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
-            </span>
-            <% end %>
-          </li>
-          <li class="list-inline-item">
-            <%= link_to "https://www.facebook.com/profile.php?id=100092978195160&mibextid=LQQJ4d".html_safe do %>
+            <%= link_to "https://www.instagram.com/traveldoxxar/".html_safe, target: "_blank" do %>
               <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                <span class="circle-icon" style="width: 50px; height: 50px; border-radius: 50%;">
+                  <%= image_tag("logo2.png", alt: "Twitter Icon", class: "icon-image", style: "width: 100%; height: 100%; border-radius: 50%;") %>
+                </span>
               </span>
             <% end %>
           </li>
           <li class="list-inline-item">
-            <%= link_to "https://twitter.com/doxxarts".html_safe do %>
+            <%= link_to "https://www.facebook.com/profile.php?id=100092978195160&mibextid=LQQJ4d".html_safe, target: "_blank" do %>
               <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                <span class="circle-icon" style="width: 50px; height: 50px; border-radius: 50%;">
+                  <%= image_tag("fb.png", alt: "Twitter Icon", class: "icon-image", style: "width: 100%; height: 100%; border-radius: 50%;") %>
+                </span>
+              </span>
+            <% end %>
+          </li>
+          <li class="list-inline-item">
+            <%= link_to "https://twitter.com/doxxarts", target: "_blank" do %>
+              <span class="fa-stack fa-lg">
+                <span class="circle-icon" style="width: 50px; height: 50px; border-radius: 50%;">
+                  <%= image_tag("x2.png", alt: "Twitter Icon", class: "icon-image", style: "width: 100%; height: 100%; border-radius: 50%;") %>
+                </span>
               </span>
             <% end %>
           </li>
