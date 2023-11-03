@@ -11,23 +11,32 @@
   </div>
 </header>
 <div class="container px-4 px-lg-5">
-  <div class="row gx-4 gx-lg-5 justify-content-center">
-    <div class="col-md-10 col-lg-8 col-xl-7">
-      <% @blogs.each do |blog| %>
-        <div class="post-preview">
-          <h2 id="blog-title" class="blog-post-title" style="font-size:1.7rem;text-align: justify;" ><%= link_to blog.heading, blog_path(blog) %></h2>
-            <p class="blog-post-meta">
-              Posted by <%= blog.author %> on <%= blog.created_at.strftime("%B %d, %Y") %>
+  <div class="row gx-1 justify-content-center">
+    <% @blogs.each do |blog| %>
+      <div class="col-md-3">
+        <div class="card mb-1 ">
+          <% if blog.banner_image? %>
+            <%= image_tag blog.banner_image.url, class: "card-img-top card-img", alt: blog.heading %>
+          <% end %>
+          <div class="card-body">
+            <h2 id="blog-title" class="card-title">
+              <%= link_to truncate(blog.heading, length: 40, omission: '...'), blog_path(blog) %>
+            </h2>
+            <p class="card-text">
+              <% if blog.author.present? %>
+                <span class="author-info">
+                  Posted by <%= blog.author %> on <%= blog.created_at.strftime("%B %d, %Y") %>
+                </span>
+              <% end %>
             </p>
+          </div>
         </div>
-        <hr class="my-4" />
-      <% end %>
-      <%= paginate @blogs, outer_window: 0, inner_window: 1,
-       previous_label: '<i class="fas fa-chevron-left"></i> Previous'.html_safe,
-      next_label: 'Next <i class="fas fa-chevron-right"></i>'.html_safe,
-      params: { controller: 'blogs', action: 'index' },
-      page_links: false %>
-    </div>
-    </div>
+      </div>
+    <% end %>
   </div>
+  <%= paginate @blogs, outer_window: 0, inner_window: 1,
+   previous_label: '<i class="fas fa-chevron-left"></i> Previous'.html_safe,
+  next_label: 'Next <i class="fas fa-chevron-right"></i>'.html_safe,
+  params: { controller: 'blogs', action: 'index' },
+  page_links: false %>
 </div>

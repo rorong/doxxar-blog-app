@@ -10826,15 +10826,14 @@ header.masthead .post-heading .meta a {
   text-align: justify;
   line-height: 1.5;
 }
-/* Styles for screens smaller than 768px */
+
 @media screen and (max-width: 767px) {
-  /* CSS rules for mobile devices */
+
   body {
     font-size: 16px;
   }
 }
 
-/* Styles for screens 768px or wider */
 @media screen and (min-width: 768px) {
   body {
     font-size: 18px;
@@ -10881,3 +10880,43 @@ background: #2a3890;
   letter-spacing: 2px;
   font-family: cursive;
 }
+.circle-icon {
+  display: inline-block;
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Adjust the size as needed */
+  /* background-color: #0073e1; */
+  border-radius: 50%; /* Make it a circle */
+  text-align: center;
+  line-height: 40px; /* Vertically center content */
+}
+  .card {
+    width: 18rem;
+    height: 350px; /* Set a fixed height for the card */
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px; /* Add rounded corners to the card */
+  }
+  .card .card-title {
+    font-size: 1.2rem; /* Updated font size */
+    text-align: justify;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+  .card .card-body {
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 10px; /* Add some padding to the card body */
+    display: flex;
+    flex-direction: column; /* Make the card body a flex container */
+  }
+  .card .author-info {
+    font-size: 0.9rem;
+    margin-top: auto; /* Push the author info to the bottom */
+  }
+  .card .card-img {
+    max-height: 150px;
+    height: 150px; /* Set a fixed height for the image */
+    border-top-left-radius: 10px; /* Rounded top-left corner for the image */
+    border-top-right-radius: 10px; /* Rounded top-right corner for the image */
+  }
