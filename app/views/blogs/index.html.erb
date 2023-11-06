@@ -13,30 +13,34 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-1 justify-content-center">
     <% @blogs.each do |blog| %>
-      <div class="col-md-3">
-        <div class="card mb-1 ">
+      <div class="col-md-4"> <!-- Increase the column size to make the card bigger -->
+        <div class="card mb-4 custom-card">
           <% if blog.banner_image? %>
-            <%= image_tag blog.banner_image.url, class: "card-img-top card-img", alt: blog.heading %>
+            <%= image_tag blog.banner_image.url, class: "card-img-top card-img custom-card-image", alt: blog.heading %>
           <% end %>
           <div class="card-body">
-            <h2 id="blog-title" class="card-title">
-              <%= link_to truncate(blog.heading, length: 40, omission: '...'), blog_path(blog) %>
+            <h2 class="card-title custom-card-title">
+              <%= truncate(strip_tags(blog.heading).capitalize, length: 60) if blog.heading.present? %> <!-- Adjust the length and card size as needed -->
             </h2>
-            <p class="card-text">
+            <hr>
+            <p class="card-text custom-card-text">
               <% if blog.author.present? %>
-                <span class="author-info">
+                <span class="author-info card-color">
                   Posted by <%= blog.author %> on <%= blog.created_at.strftime("%B %d, %Y") %>
                 </span>
               <% end %>
+              <br>
+              <%= truncate(strip_tags(blog.content).capitalize, length: 200) if blog.content.present? %> <!-- Adjust the length and card size as needed -->
             </p>
+            <%= link_to 'Read More', blog_path(blog), class: 'btn btn-primary custom-read-more-link btn-md', id: 'read-more-link' %>
           </div>
         </div>
       </div>
     <% end %>
   </div>
   <%= paginate @blogs, outer_window: 0, inner_window: 1,
-   previous_label: '<i class="fas fa-chevron-left"></i> Previous'.html_safe,
-  next_label: 'Next <i class="fas fa-chevron-right"></i>'.html_safe,
-  params: { controller: 'blogs', action: 'index' },
-  page_links: false %>
+     previous_label: '<i class="fas fa-chevron-left"></i> Previous'.html_safe,
+     next_label: 'Next <i class="fas fa-chevron-right"></i>'.html_safe,
+     params: { controller: 'blogs', action: 'index' },
+     page_links: false %>
 </div>
