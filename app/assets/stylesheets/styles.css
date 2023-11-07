@@ -10882,41 +10882,122 @@ background: #2a3890;
 }
 .circle-icon {
   display: inline-block;
-  width: 40px; /* Adjust the size as needed */
-  height: 40px; /* Adjust the size as needed */
-  /* background-color: #0073e1; */
-  border-radius: 50%; /* Make it a circle */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   text-align: center;
-  line-height: 40px; /* Vertically center content */
+  line-height: 40px;
 }
   .card {
-    width: 18rem;
-    height: 350px; /* Set a fixed height for the card */
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    border-radius: 10px; /* Add rounded corners to the card */
+    border-radius: 20px;
+    margin: 40px;
   }
   .card .card-title {
-    font-size: 1.2rem; /* Updated font size */
-    text-align: justify;
+    font-size: 22px;
     white-space: normal;
     overflow: hidden;
     text-overflow: clip;
   }
   .card .card-body {
     flex-grow: 1;
-    overflow: hidden;
-    padding: 10px; /* Add some padding to the card body */
+    padding: 10px;
     display: flex;
-    flex-direction: column; /* Make the card body a flex container */
+    flex-direction: column;
+
   }
   .card .author-info {
     font-size: 0.9rem;
-    margin-top: auto; /* Push the author info to the bottom */
+    margin-top: auto;
   }
   .card .card-img {
-    max-height: 150px;
-    height: 150px; /* Set a fixed height for the image */
-    border-top-left-radius: 10px; /* Rounded top-left corner for the image */
-    border-top-right-radius: 10px; /* Rounded top-right corner for the image */
+    max-height: 190px;
+    height: 190px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+
   }
+
+.custom-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card-image {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.custom-card-title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.custom-card-text {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-read-more-link {
+  color: blue;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.custom-card {
+  width: 90%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.image-heading {
+  color: white; /* Text color for the heading */
+  font-size: 22px; /* Adjust the font size as needed */
+  text-align: center;
+}
+#icon-image:hover {
+  content: url('arrow-right2.png');
+}
+.text-image{
+  color: rgb(62, 173, 221);
+   font-weight: 800;
+   margin-left: 10px;
+}
+/* Default styles for screens larger than 768px */
+.card-title {
+  font-size: 20px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .card-title {
+    font-size: 16px;
+  }
+}

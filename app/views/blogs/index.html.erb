@@ -13,26 +13,33 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-1 justify-content-center">
     <% @blogs.each do |blog| %>
-      <div class="col-md-4"> <!-- Increase the column size to make the card bigger -->
+      <div class="col-md-4">
         <div class="card mb-4 custom-card">
           <% if blog.banner_image? %>
-            <%= image_tag blog.banner_image.url, class: "card-img-top card-img custom-card-image", alt: blog.heading %>
+            <div class="image-container">
+              <%= image_tag blog.banner_image.url, class: "card-img-top card-img custom-card-image", alt: blog.heading.truncate(60).capitalize %>
+              <div class="image-overlay">
+                <h2 class="image-heading"><%= blog.heading.truncate(60).capitalize %></h2>
+              </div>
+            </div>
           <% end %>
           <div class="card-body">
             <h2 class="card-title custom-card-title">
-              <%= truncate(strip_tags(blog.heading).capitalize, length: 60) if blog.heading.present? %> <!-- Adjust the length and card size as needed -->
+              <%= truncate(strip_tags(blog.heading).capitalize, length: 60) if blog.heading.present? %> 
             </h2>
-            <hr>
             <p class="card-text custom-card-text">
               <% if blog.author.present? %>
-                <span class="author-info card-color">
-                  Posted by <%= blog.author %> on <%= blog.created_at.strftime("%B %d, %Y") %>
+                <span class="author-info card-color" style="color:indigo">
+                  <%= blog.created_at.strftime("%B %d, %Y") %>
                 </span>
               <% end %>
               <br>
-              <%= truncate(strip_tags(blog.content).capitalize, length: 200) if blog.content.present? %> <!-- Adjust the length and card size as needed -->
+              <%= truncate(strip_tags(blog.content).capitalize, length: 200) if blog.content.present? %>
             </p>
-            <%= link_to 'Read More', blog_path(blog), class: 'btn btn-primary custom-read-more-link btn-md', id: 'read-more-link' %>
+            <%= link_to blog_path(blog), class: 'image-class custom-read-more-link btn-sm', id: 'read-more-link' do %>
+              <%= image_tag 'arrow-left2.png', alt: 'Image Alt Text', class: 'image-class', width: 50, height: 50, id: 'icon-image' %>
+              <span class="text-image">Read More</span>
+            <% end %>
           </div>
         </div>
       </div>
