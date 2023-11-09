@@ -13,7 +13,7 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-1 justify-content-center">
     <% @blogs.each do |blog| %>
-      <div class="col-md-4">
+      <div class="col-lg-4 col-md-6 col-sm-12 mx-auto"> <!-- Added responsive classes and mx-auto -->
         <div class="card mb-4 custom-card">
           <% if blog.banner_image? %>
             <div class="image-container">
@@ -29,15 +29,15 @@
             </h2>
             <p class="card-text custom-card-text">
               <% if blog.author.present? %>
-                <span class="author-info card-color" style="color:indigo">
+                <span class="author-info card-color" style="color: indigo;">
                   <%= blog.created_at.strftime("%B %d, %Y") %>
                 </span>
               <% end %>
               <br>
-              <%= truncate(strip_tags(blog.content).capitalize, length: 200) if blog.content.present? %>
+              <%= truncate(strip_tags(blog.content).capitalize, length: 150) if blog.content.present? %>
             </p>
             <%= link_to blog_path(blog), class: 'image-class custom-read-more-link btn-sm', id: 'read-more-link' do %>
-              <%= image_tag 'arrow-left2.png', alt: 'Image Alt Text', class: 'image-class', width: 50, height: 50, id: 'icon-image' %>
+              <%= image_tag 'ic2.png', alt: 'Image Alt Text', class: 'image-class', width: 40, height: 40, id: 'icon-image' %>
               <span class="text-image">Read More</span>
             <% end %>
           </div>

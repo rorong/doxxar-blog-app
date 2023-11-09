@@ -35,7 +35,6 @@ RailsAdmin.config do |config|
       field :user_id
     end
   end
-
   config.model 'Blog' do
     edit do
       field :heading
@@ -48,14 +47,18 @@ RailsAdmin.config do |config|
         end
       end
       field :author
+      field :language, :enum do
+        enum do
+          [['English'], ['French']]
+        end
+      end
       field :user_id, :enum do
         enum do
           User.all.map { |user| [user.email, user.id] }
         end
       end
     end
-  end
-
+  end  
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

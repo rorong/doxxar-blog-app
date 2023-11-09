@@ -10891,23 +10891,24 @@ background: #2a3890;
   .card {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    margin: 40px;
+    max-width: 580px;
+    border: 1px solid rgba(49, 35, 68, .16);
+    border-radius: 12px;
+    padding-bottom: 10px;
+    box-shadow: 0 10px 70px rgba(83, 83, 83, .07);
   }
   .card .card-title {
-    font-size: 22px;
+    font-size: 1.5rem;
     white-space: normal;
     overflow: hidden;
     text-overflow: clip;
   }
   .card .card-body {
-    flex-grow: 1;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-
+    letter-spacing: -.4px;
+    font-family: Jost, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
   }
   .card .author-info {
     font-size: 0.9rem;
@@ -10934,17 +10935,30 @@ background: #2a3890;
 }
 
 .custom-card-title {
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -.01em;
+  margin-top: 0;
+  box-sizing: border-box;
 }
 
 .custom-card-text {
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 32px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  font-family: Jost, sans-serif;
+  letter-spacing: -.4px;
 }
 
 .custom-read-more-link {
+  position: absolute;
+  bottom: 8px;
   color: blue;
   border: none;
   border-radius: 5px;
@@ -10978,26 +10992,49 @@ background: #2a3890;
 }
 
 .image-heading {
-  color: white; /* Text color for the heading */
-  font-size: 22px; /* Adjust the font size as needed */
+  color: white;
+  font-size: 20px;
   text-align: center;
+  opacity: 70%;
+  line-height: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  font-family: Jost, sans-serif;
+  letter-spacing: -.4px;
 }
 #icon-image:hover {
-  content: url('arrow-right2.png');
+  content: url('ic.png');
 }
 .text-image{
   color: rgb(62, 173, 221);
    font-weight: 800;
    margin-left: 10px;
 }
-/* Default styles for screens larger than 768px */
 .card-title {
   font-size: 20px;
 }
-
-/* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
   .card-title {
     font-size: 16px;
   }
+}
+.language-dropdown {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  color: white;
+  font-family: cursive;
+  display: inline-block;
+  width: 100px;
+  border-radius: 10px;
+  line-height: 52px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  letter-spacing: 2px;
 }

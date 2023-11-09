@@ -9,17 +9,11 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto py-4 py-lg-0">
         <li class="nav-item">
-          <% unless user_signed_in? || controller_name == "sessions"%>
-            <%= link_to 'Log In', new_user_session_path, class: 'my-custom-style' %>
-          <% end %>
           <%= link_to 'Home', root_path, class: 'my-custom-style' %>
         </li>
-        <li>
-          <% if user_signed_in? %>
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete,class: 'my-custom-style', data: { turbo_frame: 'navbar', turbo_method: :delete } %>
-          <% end %>
-          <% if user_signed_in? %>
-            <%= link_to 'Admin', rails_admin_path, class: 'my-custom-style2' %>
+        <li >
+          <%= form_with model: @blog, method: :get, url: blogs_path do |f| %>
+            <%= f.select :language, ['English', 'French'], { include_blank: 'Language' }, class: 'form-control my-custom-style language-dropdown', onchange: 'this.form.submit();' %>
           <% end %>
         </li>
       </ul>
