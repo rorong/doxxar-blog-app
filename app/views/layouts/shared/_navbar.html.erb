@@ -9,9 +9,6 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto py-4 py-lg-0">
         <li class="nav-item">
-          <% unless user_signed_in? || controller_name == "sessions"%>
-            <%= link_to 'Log In', new_user_session_path, class: 'my-custom-style' %>
-          <% end %>
           <%= link_to 'Home', root_path, class: 'my-custom-style' %>
         </li>
         <li>
