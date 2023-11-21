@@ -11,11 +11,6 @@
         <li class="nav-item">
           <%= link_to 'Home', root_path, class: 'my-custom-style' %>
         </li>
-        <li >
-          <%= form_with model: @blog, method: :get, url: blogs_path do |f| %>
-            <%= f.select :language, ['English', 'French'], { include_blank: 'Language' }, class: 'form-control my-custom-style language-dropdown', onchange: 'this.form.submit();' %>
-          <% end %>
-        </li>
       </ul>
     </div>
   </div>
